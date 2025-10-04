@@ -30,7 +30,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="mailto:contato@seuemail.com"
+              href="mailto:contato@cristielensouza.com.br"
               className="flex flex-col items-center gap-3 transition-transform hover:scale-105 cursor-pointer"
             >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
