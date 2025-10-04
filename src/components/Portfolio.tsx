@@ -9,6 +9,8 @@ import {
   Dialog,
   DialogContent,
   DialogClose,
+  DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 
@@ -54,6 +56,12 @@ const Portfolio = () => {
 
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
         <DialogContent className="max-w-7xl w-[95vw] h-[95vh] p-0 bg-black/95 border-0">
+          <DialogTitle className="sr-only">
+            {selectedImage?.alt || "Visualização de imagem"}
+          </DialogTitle>
+          <DialogDescription className="sr-only">
+            Visualização ampliada da imagem do portfólio
+          </DialogDescription>
           <DialogClose className="absolute right-4 top-4 z-50 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
             <X className="h-6 w-6 text-white" />
             <span className="sr-only">Fechar</span>
