@@ -13,29 +13,40 @@ const Contact = () => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+            <a 
+              href="tel:+5511999999999"
+              className="flex flex-col items-center gap-3 transition-transform hover:scale-105 cursor-pointer"
+            >
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
                 <Phone className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-semibold">Telefone</h3>
-              <p className="text-muted-foreground">(11) 99999-9999</p>
-            </div>
+              <p className="text-muted-foreground hover:text-primary transition-colors">(11) 99999-9999</p>
+            </a>
 
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+            <a 
+              href="mailto:contato@seuemail.com"
+              className="flex flex-col items-center gap-3 transition-transform hover:scale-105 cursor-pointer"
+            >
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
                 <Mail className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-semibold">Email</h3>
-              <p className="text-muted-foreground">contato@seuemail.com</p>
-            </div>
+              <p className="text-muted-foreground hover:text-primary transition-colors">contato@seuemail.com</p>
+            </a>
 
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+            <a 
+              href="https://instagram.com/seuperfil"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-3 transition-transform hover:scale-105 cursor-pointer"
+            >
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
                 <Instagram className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-semibold">Instagram</h3>
-              <p className="text-muted-foreground">@seuperfil</p>
-            </div>
+              <p className="text-muted-foreground hover:text-primary transition-colors">@seuperfil</p>
+            </a>
           </div>
 
           <Button

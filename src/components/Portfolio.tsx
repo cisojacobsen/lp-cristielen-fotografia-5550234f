@@ -55,7 +55,7 @@ const Portfolio = () => {
       </div>
 
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-7xl w-[95vw] h-[95vh] p-0 bg-black/95 border-0">
+        <DialogContent className="max-w-7xl w-[95vw] max-h-[95vh] p-0 bg-black/95 border-0 overflow-hidden">
           <DialogTitle className="sr-only">
             {selectedImage?.alt || "Visualização de imagem"}
           </DialogTitle>
@@ -67,11 +67,11 @@ const Portfolio = () => {
             <span className="sr-only">Fechar</span>
           </DialogClose>
           {selectedImage && (
-            <div className="flex items-center justify-center w-full h-full p-4">
+            <div className="flex items-center justify-center w-full h-full p-8">
               <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
-                className="max-w-full max-h-full object-contain"
+                className="max-w-full max-h-[85vh] object-contain"
               />
             </div>
           )}
