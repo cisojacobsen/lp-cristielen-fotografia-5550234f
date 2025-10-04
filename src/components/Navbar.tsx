@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
-            <h1 className="text-2xl font-bold text-foreground tracking-tight">Seu Nome</h1>
+            <h1 className="text-2xl font-bold text-foreground tracking-tight">Cristielen Souza</h1>
             <p className="text-xs text-muted-foreground uppercase tracking-widest">Fotografia de Gastronomia</p>
           </div>
 
