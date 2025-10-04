@@ -1,11 +1,20 @@
+import { useState } from "react";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 import portfolio4 from "@/assets/portfolio-4.jpg";
 import portfolio5 from "@/assets/portfolio-5.jpg";
 import portfolio6 from "@/assets/portfolio-6.jpg";
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { X } from "lucide-react";
 
 const Portfolio = () => {
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  
   const images = [
     { src: portfolio1, alt: "Burger gourmet com queijo derretido" },
     { src: portfolio2, alt: "Sobremesa elegante" },
@@ -30,6 +39,7 @@ const Portfolio = () => {
             <div
               key={index}
               className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer"
+              onClick={() => setSelectedImage(image)}
             >
               <img
                 src={image.src}
@@ -41,6 +51,24 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
+
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-7xl w-[95vw] h-[95vh] p-0 bg-black/95 border-0">
+          <DialogClose className="absolute right-4 top-4 z-50 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+            <X className="h-6 w-6 text-white" />
+            <span className="sr-only">Fechar</span>
+          </DialogClose>
+          {selectedImage && (
+            <div className="flex items-center justify-center w-full h-full p-4">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
